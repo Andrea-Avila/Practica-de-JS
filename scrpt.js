@@ -254,3 +254,34 @@ multiplicacion(3,7);
 multiplicacion(8,4);
 multiplicacion(12,6);
 multiplicacion(2, ); //Se imprime NaN por que nos falta un parametro    
+
+
+
+
+//return: La sentencia return finaliza la ejecucion de la funcion, y en especifico un valor para ser devuelto a quien llama a la funcion. O lo que es lo mismo, usamos return para finalizat y tambien para poder asignar el resultado a una variable.
+
+
+
+
+//funcion para dar un un saludo personalizado
+
+
+//primero defino mi funcion
+function saludo() {
+    //declaro e inicializo mi valor del nombre
+    let nombreSaludo = "felipe";
+    let apellidousuario = "Maqueda";   
+    //uso ese nombre para personalizar mi saludo
+       console.log("Hola "+ nombreSaludo + " ,que bueno que estes aqui");
+   
+       //finaliza la ejecucion de mi funcion, y tomo el dato de la variable llamada nombre Saludo pra poder verla (recordemos que esta en un contexto local) y tambien para poder usarla despues en otras operaciones
+       return nombreSaludo + " " + apellidousuario;//limbo de la variable
+   }
+   //saludo("Gaby");
+   
+   //Para poder usar esa variable que hasta este momento sacamos de la funcion, pero que no sabemos donde esta (por que esta en el limbo de las funciones). Y en esta nueva variable ponemos la invocacion de l(a funcion.
+   const nombreQueSalioSaludo = saludo();
+   console.log("Estas personas son las que han iniciado sesion en mi aplicacion " + nombreQueSalioSaludo);
+   
+   var nombreIngresadoDesdeElNavegador = prompt("introduce tu nombre");
+   console.log("gracias por entrar a mi pagina " + nombreIngresadoDesdeElNavegador);
