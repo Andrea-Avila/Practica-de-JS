@@ -122,7 +122,7 @@ Operadores aritmeticos (suma +,resta -, multiplicacion*, divicion /,Residuo %, *
 
 +(suma); este operador suma dos o mas valores numericos.
 -(resta); resta dos o mas valores numericos.
-*(Miltiplicacion): multiplica dos o mas valores numericos.
+/*(Miltiplicacion): multiplica dos o mas valores numericos.
 /(Divicion) Divide dos o mas valores numericos.
 %(Modulo o residuo): Retorno el residuo de la division
 **(Exponenciación) :Retorna el resultado de la potencia.Se escribe la base antes de los asteriscos, y el exponente despues de los asteriscos

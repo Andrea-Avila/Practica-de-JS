@@ -33,14 +33,14 @@ if (condicion){
 //Felipe tiene 17 anios,y quiere ir a una fiesta.Dicha fiesta solo es par personas adultas (mayores de 18 anios). ayuda a Felipe a decidir si puede ir a la fiesta o no. 
 //Evaluamos solo una expresion (si Felipe tiene menos de 18 anios), en caso de que sea verdadero, mostraremos el mensaje dentro del bloque. Si es falso, no mostrara nada porque nuestro programa no esta preparado para esa situacion (incertidumbre).
 
-let edadDeFelipe =19;
-let edadPermitida = 18;
+// let edadDeFelipe =19;
+// let edadPermitida = 18;
 
-if (edadDeFelipe < 18) {
-   //  console.log("lo siento Felipe, no puedes ir a la fiesta");  
+// if (edadDeFelipe < 18) {
+//    //  console.log("lo siento Felipe, no puedes ir a la fiesta");  
 
-}else (edadDeFelipe >= 18) 
- //   console.log("Felicidades Felipe, puedes ir a la fiesta");
+// }else (edadDeFelipe >= 18) 
+//  //   console.log("Felicidades Felipe, puedes ir a la fiesta");
 
 
 /*
@@ -61,16 +61,16 @@ else {
 
 
 
-let edadUsuario = true;
-//prompt("Ingresa tu edad");
-if (edadUsuario < edadPermitida) {
+// let edadUsuario = true;
+// //prompt("Ingresa tu edad");
+// if (edadUsuario < edadPermitida) {
     
-    console.log("lo siento, no puedes ir a la fiesta");  
+//     console.log("lo siento, no puedes ir a la fiesta");  
 
-}  else{ 
-//Se ejecuta cuando es falso que el ususario es mayor a la edad permitida
-    console.log("Felicidades tienes la edad permitida, puedes ir a la fiesta");
-}
+// }  else{ 
+// //Se ejecuta cuando es falso que el ususario es mayor a la edad permitida
+//     console.log("Felicidades tienes la edad permitida, puedes ir a la fiesta");
+// }
  /*
  Test de nuestro progrma (valores que tambien se evaluan como falsos)
 
@@ -124,11 +124,73 @@ if (edadDavid > edadPermitida){
 
 
 
-let hora = prompt("Ingrese la hora actual");
-if (hora <12){
-    console.log("Buenos días");
-}else if (hora <=19){
-console.log("Buenas tardes, que barbaro como pasa el tiempo");
-}else{
-    console.log("buenas noches, vamos a mimir");
+// let hora = prompt("Ingrese la hora actual");
+// if (hora <12){
+//     console.log("Buenos días");
+// }else if (hora <=19){
+// console.log("Buenas tardes, que barbaro como pasa el tiempo");
+// }else{
+//     console.log("buenas noches, vamos a mimir");
+// }
+
+/* switch
+Esta condicon nos permite hacer multiples operaciones y tomar decisiones en funcion de distintos estados de la variable. 
+Evalua una expresion comparando el valor de un dato o variable, y ejecutando la instruccion asociada a ese caso .
+ - case: Evalua el caso o condicion asociado que dispara un bloque de codigo
+ - break: Termina el proceso sin que tengamos que pasar por todas las iteraciones o casos.
+ - default: Termina el proceso en caso de que ninguna de las evaluaciones sea la correcta (similar al else)
+
+
+
+
+switch (Expresion o condicion){
+    case valor 1:
+        Codifo que se ejecuta si la condicion es igual a valor1
+    break;
+    case valor 1:
+        Codifo que se ejecuta si la condicion es igual a valor1
+    break;
+    case valor 1:
+        Codifo que se ejecuta si la condicion es igual a valor1
+    break;
+    case valor 1:
+        Codifo que se ejecuta si la condicion es igual a valor1
+    break;
+    case valor 1:
+        Codifo que se ejecuta si la condicion es igual a valor1
+    break;
+
+    default:
+     Ingresaste un piso incorrecto (un bloque de codigo que se ejecuta si no se cumple con ninguna de las condiciones anteriores)
 }
+
+}
+
+*/
+
+// let pisoDestino = prompt ("Ingresa el número del piso que quieras ir (1 al 5)");
+// switch(pisoDestino){
+//     //Para jugar con nuestros casoso, el tipo de datos debe coincidir para que se ejecute correctamente
+//     case "1":
+//         console.log("Vamos a piso 1 (Suena musica de elevador de fondo)");
+//         break;
+//     case "2":
+//         console.log("Vamos a piso 2 (Suena musica de elevador de fondo)");
+//         break;
+//     case "3":
+//         console.log("Vamos a piso 3 (Suena musica de elevador de fondo)");
+//         break;
+//     case "4":
+//         console.log("Vamos a piso 4 (Suena musica de elevador de fondo)");
+//         break;
+//     case "5":
+//         console.log("Vamos a piso 5 (Suena musica de elevador de fondo)");
+//         break;
+
+//     default:
+//         console.log("Ingresaste un piso que no es valido");
+    
+// }
+
+//Ejercicio de Evee
+
