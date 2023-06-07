@@ -1,131 +1,142 @@
-    var sueldoPorDia = 156.78;
-    var sueldoPorSemana = sueldoPorDia *7;
-    var sueldoPorMes = sueldoBrutoPorSemana*4;
+//Aqui calcaulamos el sueldo por todos los dias trabajados para que se imprima una sola vez
 
-   var sueldoBrutoDia = 160;
-    var sueldoBrutoPorSemana = sueldoBrutoDia *7;
-    var sueldoBrutoPorMes = sueldoBrutoPorSemana *4;
+// var sueldoPorDia = 156.78;
+// var sueldoPorSemana = sueldoPorDia *7;  
+// var sueldoPorMes = sueldoBrutoPorSemana*4;
 
-class sueldos{
+// var sueldoBrutoDia = 160;
+// var sueldoBrutoPorSemana = sueldoBrutoDia *7;
+// var sueldoBrutoPorMes = sueldoBrutoPorSemana *4;
+
+
+//Vamos a declarar
+class sueldos {
     //1.-propiedades
-    nombre = "";    
-    // sueldoPorSemana = 0;
-    // sueldoPorMes = 0;
-
-    // sueldoBrutoDia = 0;
-    // sueldoBrutoPorSemana = 0;
-    // sueldoBrutoPorMes = 0;
-
-   // isr=sueldoBrutoPorMes *.31;
-
-    edad =0;
+    nombre = "";
+    isr = .31;
+    edad = 0;
     rfc = "";
     sueldoPorDia = 156.78;
-    numeroDiasTrabajados =0;
+    numeroDiasTrabajados = 0;
     horasTrabajadas = 0;
     mereceBono = false;
 
 
 
-        //3 Constructor
-        constructor(nombre,edad,rfc,numeroDiasTrabajados,horasTrabajadas,mereceBono,){
-            //sueldoPorDia,sueldoPorSemana,sueldoPorMes,sueldoBrutoDia,sueldoBrutoPorSemana,sueldoBrutoPorMes
-            this.nombre=nombre;
+    //3 Constructor
+    constructor(nombre, edad, rfc, numeroDiasTrabajados, horasTrabajadas) {
 
-            // this.sueldoPorDia=sueldoPorDia;
-            // this.sueldoPorSemana=sueldoPorSemana;
-            // this.sueldoPorMes=sueldoPorMes;
-
-            // this.sueldoBrutoDia=sueldoBrutoDia;
-            // this.sueldoBrutoPorSemana=sueldoBrutoPorSemana;
-            // this.sueldoBrutoPorMes=sueldoBrutoPorMes;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.rfc = rfc;
+        this.numeroDiasTrabajados = numeroDiasTrabajados;
+        this.horasTrabajadas = horasTrabajadas;
+        //          this.mereceBono=mereceBono; Se comenta por que se va a optimizar el que merezca un bono en una Funcion
 
 
-            this.edad=edad;
-            this.rfc=rfc;
-            this.numeroDiasTrabajados=numeroDiasTrabajados;
-            this.horasTrabajadas=horasTrabajadas;
-            this.mereceBono=mereceBono;
-    
-
-        }
+    }
 
     //2.-Metodos
-        imprimirInfo(){
-            console.log("El nombre de mi colaborador es ", this.nombre);
+    imprimirInfo() {
+        console.log("El nombre de mi colaborador es ", this.nombre);
+        console.log("La edad de", this.nombre, " es de ", this.edad, " años");
+        console.log("El RFC de", this.nombre, " es ", this.rfc);
+        console.log("El numero de dias que", this.nombre, " trabajo es de ", this.numeroDiasTrabajados);
+        console.log("El total de horas trabajadas en la semana de", this.nombre, " es de ", this.horasTrabajadas);
+
+        return this.nombre;
+
+    };
+
+    calcularSueldoBruto() {
+
+        var sueldoSemanal = (this.sueldoPorDia * this.numeroDiasTrabajados);
+        console.log("El sueldo bruto por semana de ", this.nombre, " es de ", sueldoSemanal);
 
 
-            // console.log("El sueldo neto por dia de ",this.nombre," es de ", this.sueldoPorDia);
-            // console.log("El sueldo neto por semana de",this.nombre," es de ", this.sueldoPorSemana);
-            // console.log("El sueldo neto por mes de",this.nombre," es de ", this.sueldoPorMes);
+        var sueldoMensual = (4 * sueldoSemanal);
+        console.log("El sueldo bruto por mes de ", this.nombre, " es de ", sueldoMensual);
+
+        var sueldoQuincenal = (2 * sueldoSemanal);
+        console.log("El sueldo bruto por quincena  de ", this.nombre, " es de ", sueldoQuincenal);
+    }
 
 
-            // console.log("El sueldo bruto por dia  ",this.nombre," es de ", this.sueldoPorDia);
-            // console.log("El sueldo bruto por semana de",this.nombre," es de ", this.sueldoPorSemana);
-            // console.log("El sueldo bruto por mes  de",this.nombre," es de ", this.sueldoPorMes);
+    calcularSueldoNeto() {
+        var sueldoimpuesto= (this.sueldoPorDia * this.numeroDiasTrabajados);
+        var sueldoSemanalNeto =sueldoimpuesto-(sueldoimpuesto*0.31)
 
-            console.log("La edad de",this.nombre," es de ", this.edad," años");
-            console.log("El RFC de",this.nombre," es ", this.rfc);
-            console.log("El numero de dias que",this.nombre," trabajo es de ", this.numeroDiasTrabajados);
-            console.log("El total de horas trabajadas en la semana de",this.nombre," es de ", this.horasTrabajadas);
-            console.log(this.nombre," merece bono ? ", this.mereceBono);
-            return this.nombre;
-            
-        };
+        console.log("El sueldo neto por semana de ", this.nombre, " es de ", sueldoSemanalNeto);
         
-        calcularSueldoPorSemana(){
-            //sueldoPorDia
-            var semana = this.sueldoPorDia *7;
-            var semananeta =this.sueldoPorDia 
+        var sueldoMensualNeto = (4 *sueldoSemanalNeto);
+        console.log("El sueldo neto por mes de ", this.nombre, " es de ", sueldoMensualNeto);
 
-        }
-        calcularSueldoPorMes(){
+        var sueldoQuincenalNeto = (2 * sueldoSemanalNeto);
+        console.log("El sueldo neto por quincena  de ", this.nombre, " es de ", sueldoQuincenalNeto);
+    
+    }
+    bono() {
 
-            this.sueldoPorDia
-        }
-        bono(){
-            if (this.mereceBono === "true") {
-             //  if (this.horasTrabajadas >45) {
-                console.log("Felicidades ganaste una anvorgesa");
-               //}
-              
-            }
-            
-            //else 
-            //console.log("no ganaste la anvorgesa lo siento :(");
-        }
-        comerAmvorgesas(){
-            console.log("El colaborador comio su amvorgesa, esta contento");
-        };
+        if (this.horasTrabajadas > 45) {
+            console.log(this.nombre, " merece bono ? ", true);
+            console.log("Felicidades ganaste una anvorgesa");
+        } else
+            console.log("no ganaste la anvorgesa lo siento :(");
+    }
+    comerAmvorgesas() {
+        console.log("El colaborador comio su amvorgesa, esta contento");
+    };
 }
 
 //Instancair
-let pancho = new sueldos ("pancho",56,"prga764398hg5",6,48,"true");
+let pancho = new sueldos("pancho", 56, "prga764398hg5", 6, 48);
+let panfila = new sueldos("panfila", 23, "PIHE172038GF6", 7, 49);
+let merengano = new sueldos("merengano", 23, "aiga971207ug4", 7, 45);
+let loki = new sueldos("loki", 33, "aiga971207ug4", 4, 40,);
+let sutanita = new sueldos("sutanita", 28, "aiga971207ug4", 7, 49);
+
+// console.log("El sueldo neto por dia de",this.nombre," es de ", sueldoPorDia); Se comenta para que no lo arroge solo una vez
+// console.log("El sueldo neto por semana de",this.nombre," es de ", Se comenta para que no lo arroge solo una vezsueldoPorSemana);
+// console.log("El sueldo neto por mes de",this.nombre," es de ", sueldoPorMes);Se comenta para que no lo arroge solo una vez
 
 
-// let panfila = new sueldos  ("panfila", 156.78 ,23,"aiga971207ug4",4,72,true);
-// let merengano = new sueldos  ("merengano", 156.78 ,23,"aiga971207ug4",4,72,true);
-// let loki = new sueldos  ("loki", 156.78 ,23,"aiga971207ug4",4,72,false);
-// let sutanita = new sueldos ("sutanita", 156.78 ,23,"aiga971207ug4",4,72,true);
+// console.log("El sueldo bruto por dia  ",this.nombre," es de ", sueldoBrutoDia);Se comenta para que no lo arroge solo una vez
+// console.log("El sueldo bruto por semana de",this.nombre," es de ", Se comenta para que no lo arroge solo una vezsueldoBrutoPorSemana);
+// console.log("El sueldo bruto por mes  de",this.nombre," es de ", Se comenta para que no lo arroge solo una vezsueldoBrutoPorMes);
 
-
-console.log("El sueldo neto por dia de ",this.nombre," es de ", sueldoPorDia);
-console.log("El sueldo neto por semana de",this.nombre," es de ", sueldoPorSemana);
-console.log("El sueldo neto por mes de",this.nombre," es de ", sueldoPorMes);
-
-
-console.log("El sueldo bruto por dia  ",this.nombre," es de ", sueldoBrutoDia);
-console.log("El sueldo bruto por semana de",this.nombre," es de ", sueldoBrutoPorSemana);
-console.log("El sueldo bruto por mes  de",this.nombre," es de ", sueldoBrutoPorMes);
-
-pancho.imprimirInfo ();
+console.log("<----------------------------------------------------->");
+pancho.imprimirInfo();
 pancho.bono();
 
-// panfila.imprimirInfo();
-// panfila.bono();
-// merengano.imprimirInfo();
-// merengano.bono();
-// loki.imprimirInfo();
-// loki.bono();
-// sutanita.imprimirInfo();
-// sutanita.bono();
+pancho.calcularSueldoBruto();
+console.log("<--------------->");
+pancho.calcularSueldoNeto();
+
+
+console.log("<----------------------------------------------------->");
+panfila.imprimirInfo();
+panfila.bono();
+panfila.calcularSueldoBruto();
+console.log("<--------------->");
+panfila.calcularSueldoNeto();
+
+console.log("<----------------------------------------------------->");
+merengano.imprimirInfo();
+merengano.bono();
+merengano.calcularSueldoBruto();
+console.log("<--------------->");
+merengano.calcularSueldoNeto();
+
+console.log("<----------------------------------------------------->");
+loki.imprimirInfo();
+loki.bono();
+loki.calcularSueldoBruto();
+console.log("<--------------->");
+loki.calcularSueldoNeto();
+
+console.log("<----------------------------------------------------->");
+sutanita.imprimirInfo();
+sutanita.bono();
+sutanita.calcularSueldoBruto();
+console.log("<--------------->");
+sutanita.calcularSueldoNeto();
