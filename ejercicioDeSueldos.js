@@ -9,7 +9,7 @@
 // var sueldoBrutoPorMes = sueldoBrutoPorSemana *4;
 
 
-//Vamos a declarar
+//Vamos a declarar nuestras propiedades  
 class sueldos {
     //1.-propiedades
     nombre = "";
@@ -24,6 +24,7 @@ class sueldos {
 
 
     //3 Constructor
+    //Agregamos el nombre, edad, efc, dias y horas trabajas
     constructor(nombre, edad, rfc, numeroDiasTrabajados, horasTrabajadas) {
 
         this.nombre = nombre;
@@ -48,7 +49,7 @@ class sueldos {
 
     };
 
-    calcularSueldoBruto() {
+    calcularSueldoBruto() { //Hacemos las operaciones correspondientes por los dias trabajados
 
         var sueldoSemanal = (this.sueldoPorDia * this.numeroDiasTrabajados);
         console.log("El sueldo bruto por semana de ", this.nombre, " es de ", sueldoSemanal);

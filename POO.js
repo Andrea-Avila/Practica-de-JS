@@ -173,26 +173,46 @@ Otras formas de programar:
 
 JSON (JavaScript Object Notation)
 
-Es un formato estandar basado en texto (string )para representar datos estructurados (objetos) basados en la sintaxis de objetos de javaScript ({,:})
+Es un formato estandar basado en texto (string) para representar datos estructurados (objetos) basados en la sintaxis de objetos de JavaScript ({, :})
 
-JSON es una esturctura de datos (mantiene la estructura de un objeto de JS normal), que nos permite guardadr datos en form ade objetos. La unica diferencia este que estos datos se guardab en un formato de texto, para poder hacer la comunicacion con nestro servidor.
-par poder cominicarnos con un sevidor, necesitamos convertir nuestro objeto a u objeto que puede ser interpretado 
+
+JSON es una estructura de datos (mantiene la estructura de un objeto de JS normal), que nos permite guardar datos en forma de objetos. La unica diferencia este que estos datos se guardan en un formato de texto, para poder hacer la comunicacion con nuestro servidor.
+
+Para poder comunicarnos con un servidor, necesitamos convertir nuestro objeto a un objeto que pueda ser interpretado.
+
 */
 
-objeto={
-
-    nombre:"Andrea",
-    edad : 25,
+// Objeto normal de JAVASCRIPT (tiene colores, me muestra las palabra reservadas)
+objeto = {
+    nombre: "Andrea",
+    edad: 25,
 }
-console.log(objeto);
 
-/*Como nuestro servidor no interpeta objetos "puros", necesitamos convertorlos a cadenas de texto. Este proceso se le conoce omo serializacion.
+console.log ("Este es un objeto normal: ", objeto);
+console.log("Este es el nombre de mi objeto: ", objeto.nombre);
 
-la sintaxisx para basasr de objeto normal de js a JSON
 
-JSON. stirngify (objeto que quiero serializar)
+/*Como nuestro servidor no interpreta objetos "puros", necesitamos convertirlos a cadenas de texto. Este proceso se le conoce como serializar
 
- */
+La sintaxis para pasar de objeto normal de JS a JSON es:
 
+
+JSON.stringify(objeto que quiero serializar)
+
+*/
+
+let objetoSerializado = (JSON.stringify(objeto));
+
+//Podemos imprimir nuestro objeto serializado, y lo veremos como una cadena de texto
+console.log("Este es un objeto serializado: ",objetoSerializado);
+
+//Si tratamos de acceder a alguna de las propiedades de nuestro objeto serializado, no podremos ya que nos mostrara "undefined"
+console.log(objetoSerializado.nombre);
 console.log(JSON.stringify(objeto));
 console.log(JSON.parse(objeto));
+
+
+let objetoDeserializado =(JSON.parse(objetoSerializado));
+console.log(objetoDeserializado);
+
+console.log(objetoDeserializado.nombre);
